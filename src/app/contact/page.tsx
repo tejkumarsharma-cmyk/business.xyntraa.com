@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Clock, Building2, Send, HelpCircle, FileText, Users, ArrowRight } from 'lucide-react'
+import { Mail, FileText, Users, Building2, Send, HelpCircle, ArrowRight } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
 
@@ -36,29 +36,6 @@ export default function ContactPage() {
       message: ''
     })
   }
-
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: 'Telephone Hours',
-      details: ['Monday - Friday: 9:00 AM - 6:00 PM EST', 'Saturday: 10:00 AM - 4:00 PM EST', 'Sunday: Closed']
-    },
-    {
-      icon: Phone,
-      title: 'Toll-Free Number',
-      details: ['1-800-ZORVIXY', '1-800-967-8499']
-    },
-    {
-      icon: MapPin,
-      title: 'US Address',
-      details: ['Zorvixy Media Distribution', '1234 Press Release Avenue', 'New York, NY 10001', 'United States']
-    },
-    {
-      icon: MapPin,
-      title: 'Canada Address',
-      details: ['Zorvixy Canada', '567 Media Way', 'Toronto, ON M5V 2T6', 'Canada']
-    }
-  ]
 
   const faqItems = [
     {
@@ -213,29 +190,6 @@ export default function ContactPage() {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            {/* Quick Contact Info */}
-            <div className="press-card p-8">
-              <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => {
-                  const Icon = info.icon
-                  return (
-                    <div key={index} className="flex gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-2">{info.title}</h3>
-                        {info.details.map((detail, detailIndex) => (
-                          <p key={detailIndex} className="text-sm text-muted">{detail}</p>
-                        ))}
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-
             {/* Services */}
             <div className="press-card p-8">
               <h2 className="text-2xl font-bold mb-6">How We Can Help</h2>

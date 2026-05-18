@@ -11,7 +11,18 @@ import { getFactoryState } from '@/design/factory/get-factory-state'
 import { getGoogleFontsHref, getSiteFontVariables } from '@/config/site.font'
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildSiteMetadata()
+  const base = await buildSiteMetadata()
+  return {
+    ...base,
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/favicon.png', type: 'image/png' },
+      ],
+      apple: '/apple-icon.png',
+      shortcut: '/favicon.png',
+    },
+  }
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
